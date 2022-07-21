@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat WebSockets</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container m-2">
+        
+        <div class="card col-9">
+            <div class="card-header bg-success px-3 text-white">
+                <h2>Ingreso de productos:</h2>
+            </div>
+            <div class="card-body">
+                <form class="d-flex flex-row">
+                    <div class="p-2">
+                        <label for="formControlInput" class="form-label">Item</label>
+                        <input id="item" name="item">
+                    </div>
+                    <div class="p-2">
+                        <label for="form-label">Price</label>
+                        <input id="price" type="number" name="price">
+                    </div>
+                    <div class="p-2">
+                        <label for="formControlInput" class="form-label">URL</label>
+                        <input id="url" name="url">
+                    </div>
+
+                    <button style="background-color:#1C381C" class="btn text-white mx-3 px-5" id="send2">Send</button>
+
+                </form>
+            </div>
+        </div>
+            <br>
+            <table class="container table table-striped">
+                <thead style="background-color:#1C381C; color:white">
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>url</th>
+                    </tr>
+                </thead>
+                <tbody id="products"></tbody>
+            </table>
+        </div>
+        <br>
+        <div class="card mx-4">
+            <div class="card-header">
+                <h4 id="username">NN</h2>
+            </div>
+            <div class="card-body">
+                <form>
+                    <input id="msn" name="msn">
+                    <button id="send">Send</button>
+                </form>
+                <div id="chat"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/public/index.js"></script>
+</body>
+</html>
